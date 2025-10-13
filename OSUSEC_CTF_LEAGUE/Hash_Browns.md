@@ -1,7 +1,10 @@
 ## Hash Browns
 
 **Date**: 9/29/25
+
 **Author**: Lukas Somwong
+
+**Flags**: 1
 
 ### Challenge
 
