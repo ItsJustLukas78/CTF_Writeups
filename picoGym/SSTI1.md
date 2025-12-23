@@ -11,7 +11,7 @@
 ## Solution
 
 The name of the challenge pointed towards using template injection to find the flag. 
-Inputting {{2*3}} resulted in the expression 2*3 to evaluate as 7 as shown in the 
+Inputting `{{2*3}}` resulted in the expression 2*3 to evaluate as 7 as shown in the 
 resulting announcement indicating jinja was being used.
 
 I used the following expression, getting all classes in the python enviornment 
