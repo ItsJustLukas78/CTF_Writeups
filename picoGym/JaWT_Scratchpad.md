@@ -1,11 +1,9 @@
 # JaWT Scratchpad
-
+ 
 **Date**: 12-22-2025
 **Author**: Lukas Somwong  
 **Platform**: PicoCTF PicoGym
 **Category**: Web
-
----
 
 ## Solution
 
