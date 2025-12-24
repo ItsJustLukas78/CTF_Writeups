@@ -8,6 +8,8 @@
 
 **Category**: Web
 
+**Dificulty**: Easy
+
 ## Solution
 
 The name of the challenge pointed towards using template injection to find the flag. 
