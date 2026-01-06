@@ -13,7 +13,7 @@
 There were two flags in this challenge. I was provided two seperate links. Both links directed to a login page, but the second was specifically an "Admin Login" page.
 
 
-## Solution for Flag One
+## Solution for Flag 1
 
 Entering any arbitrary combination of a username and password displayed the SQL query that was executed upon each login attempt.
 
@@ -51,7 +51,7 @@ In the root directory, I found the flag.txt file and used cat to read the flag
 
 ![alt text](<images/Screenshot 2026-01-05 at 8.45.09 PM.png>)
 
-## Solution for Flag Two
+## Solution for Flag 2
 
 Like the previous page, entering any arbitrary combination of a username and password on the admin login displayed the SQL query that was executed upon each login attempt. This time, the password was not included in the query. 
 

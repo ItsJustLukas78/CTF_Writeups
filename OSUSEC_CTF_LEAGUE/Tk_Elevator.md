@@ -1,7 +1,20 @@
-tk-elevator
-Date: 10/13/25
+## tk-elevator
 
-Author: Lukas Somwong
+**Date**: 10/13/25
+
+**Author**: Lukas Somwong
+
+**Platform**: DAMSEC CTF League
+
+**Category**: Misc
+
+**Flags**: 1
+
+## Overview
+
+In this challenge I was provided a remote machine to ssh into. I was logged into "User 0" and needed to find a password as each user or "level" to move on to the next one. One flag was accesible by an unspecified user and one was at the last user or level 10.
+
+## Solutions
 
 Level 0:
 
