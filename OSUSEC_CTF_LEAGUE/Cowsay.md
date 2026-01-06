@@ -102,3 +102,9 @@ Okay, lets try 2?
 ![alt text](<images/Screenshot 2026-01-05 at 9.26.28 PM.png>)
 
 Oh that was suprisingly intuitive. I found the flag by searching for a note thats not displayed on my page. I am logged in as the admin after all...
+
+## Second Solution for Flag 2
+
+Shortly after getting the flag, I discovered that there was a much easier method to login as the admin. By using the following SQL injection within the username field, we could overwrite the retrieved user information with our own password. We aren't modifying the actual database, but the program will now compare our entered password in the password field with the arbitrary password we set for admin in our injection.
+
+`admin' UNION SELECT 1, 'admin', 'test' FROM users; -- -`
