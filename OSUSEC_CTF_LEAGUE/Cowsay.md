@@ -17,7 +17,7 @@ There were two flags in this challenge. I was provided two seperate links. Both 
 
 Entering any arbitrary combination of a username and password displayed the SQL query that was executed upon each login attempt.
 
-![alt text](<images/Screenshot 2026-01-05 at 8.16.43 PM.png>)
+![](<images/Screenshot 2026-01-05 at 8.16.43 PM.png>)
 
 Observing the query, I wondered if I could inject SQL to cause the query to always return the user without needing the correct password.
 
@@ -25,7 +25,7 @@ In the username and password field, I continued to input arbitrary values, but I
 
 `123' OR 1=1 -- `
 
-![alt text](<images/Screenshot 2026-01-05 at 8.23.30 PM.png>)
+![](<images/Screenshot 2026-01-05 at 8.23.30 PM.png>)
 
 I was able to succesfuly log in. The page then prompted me to enter a string for a cow to say. I suspected that the application was using the cowsay command-line program behind the scenes to generate the cow.  
 
@@ -39,27 +39,27 @@ which on the remote machine theoretically executes as
 
 `cowsay 'Hello'; ls ; ''`
 
-![alt text](<images/Screenshot 2026-01-05 at 8.30.18 PM.png>)
+![](<images/Screenshot 2026-01-05 at 8.30.18 PM.png>)
 
 I was able to sucessfuly execute `ls` on the remote machine, and the application displayed the output of that command, listing out files and directories in the same directory as the program.
 
 None of the files stood out to me, so I checked the root directory.
 
-![alt text](<images/Screenshot 2026-01-05 at 8.43.34 PM.png>)
+![](<images/Screenshot 2026-01-05 at 8.43.34 PM.png>)
 
 In the root directory, I found the flag.txt file and used cat to read the flag
 
-![alt text](<images/Screenshot 2026-01-05 at 8.45.09 PM.png>)
+![](<images/Screenshot 2026-01-05 at 8.45.09 PM.png>)
 
 ## Solution for Flag 2
 
 Like the previous page, entering any arbitrary combination of a username and password on the admin login displayed the SQL query that was executed upon each login attempt. This time, the password was not included in the query. 
 
-![alt text](<images/Screenshot 2026-01-05 at 8.15.49 PM.png>)
+![](<images/Screenshot 2026-01-05 at 8.15.49 PM.png>)
 
 On the bottom of the page, I discovered a link to the source code of the application.
 
-![alt text](<images/Screenshot 2026-01-05 at 8.48.54 PM.png>)
+![](<images/Screenshot 2026-01-05 at 8.48.54 PM.png>)
 
 Reading the source code, it appeared that the program first executed a query to check if the entered username appeared in the database, then either immediately returned "The user was not found" or checked the password and returned "That password is incorrect" if it was incorrect and directed to the next page if it was correct.
 
@@ -73,7 +73,7 @@ Entering the username "admin" always returned "That password is incorrect" (The 
 
 I used this boolean output in a Python script where I injected SQL in the username field to essentialy ask the program true or false questions about the password.
 
-![alt text](<images/Screenshot 2026-01-05 at 9.10.13 PM.png>)
+![](<images/Screenshot 2026-01-05 at 9.10.13 PM.png>)
 
 I first iterated through a range of numbers, injecting `' AND LENGTH(password) = {number} -- ` into the username field to find the password length, which when reached, would result in the page returning "That password is incorrect".
 
@@ -81,13 +81,13 @@ I found the length of the password to be `12`
 
 Using this length, I could finally discover the password. 
 
-![alt text](<images/Screenshot 2026-01-05 at 9.17.02 PM.png>)
+![](<images/Screenshot 2026-01-05 at 9.17.02 PM.png>)
 
 By injecting `' AND BINARY SUBSTRING(password, start_position, 1) = 'random_character' -- ` I was able to brute force the password by comparing the substrings or individual characters of the password to every single possible character until I got a truthy value for each.
 
 I discovered the password to be `TFNreE4GSNHA`
 
-![alt text](<images/Screenshot 2026-01-05 at 9.21.38 PM.png>)
+![](<images/Screenshot 2026-01-05 at 9.21.38 PM.png>)
 
 After succesfuly logging into the admin account, I was brought to a note-taking page. The page said that the flag was stored within a previously made note by another user.
 
@@ -95,11 +95,11 @@ I quickly observed that clicking the link to an existing note made a get request
 
 The note I clicked on had an id of 4, so I just changed the id to 1 in the request.
 
-![alt text](<images/Screenshot 2026-01-05 at 9.25.52 PM.png>)
+![](<images/Screenshot 2026-01-05 at 9.25.52 PM.png>)
 
 Okay, lets try 2?
 
-![alt text](<images/Screenshot 2026-01-05 at 9.26.28 PM.png>)
+![](<images/Screenshot 2026-01-05 at 9.26.28 PM.png>)
 
 Oh that was suprisingly intuitive. I found the flag by searching for a note thats not displayed on my page. I am logged in as the admin after all...
 

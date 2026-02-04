@@ -20,11 +20,11 @@ For this challenge, I was provided a JNDI exploit server endpoint (log4j.ctf-lea
 
 On the web application, I observed that I could enter a coffee id, quantity, and comments. 
 
-![alt text](<images/Screenshot 2026-01-08 at 2.23.57 PM.png>)
+![](<images/Screenshot 2026-01-08 at 2.23.57 PM.png>)
 
 Submitting our order simply displayed a receipt of our input. I decided to look at the source code provided to us.
 
-![alt text](<images/Screenshot 2026-01-08 at 2.25.11 PM.png>)
+![](<images/Screenshot 2026-01-08 at 2.25.11 PM.png>)
 
 Within a `CoffeeController.java` file, I found the source code for the `/order` endpoint which we were accessing. The ID and quantity entered had to be decimals, but the comment could be a string. More interestingly, the endpoint denied a comment which contained "jndi". 
 
@@ -59,4 +59,4 @@ JNDI lookup:
 
 I inputted this string into the comment field and submitted, and shortly after received the flag through my open port.
 
-![alt text](<images/Screenshot 2026-01-07 at 8.02.00 PM.png>)
+![](<images/Screenshot 2026-01-07 at 8.02.00 PM.png>)

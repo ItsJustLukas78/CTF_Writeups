@@ -14,8 +14,8 @@
 
 Entering any arbitrary username and password combination led to an access denied page which hinted at checking the cookies.
 
-![alt text](<../images/Screenshot 2025-12-23 at 8.52.52 PM.png>)
-![alt text](<../images/Screenshot 2025-12-23 at 8.53.09 PM.png>)
+![](<../images/Screenshot 2025-12-23 at 8.52.52 PM.png>)
+![](<../images/Screenshot 2025-12-23 at 8.53.09 PM.png>)
 
 Using the browser developer tools showed a cookie 
 
