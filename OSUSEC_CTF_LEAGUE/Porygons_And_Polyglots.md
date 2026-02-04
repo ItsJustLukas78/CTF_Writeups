@@ -44,7 +44,7 @@ Viewing the hexdump of `porygon2`, the PDF of pokemons, revealed javascript that
 
 Using Node, I executed the following code `console.log(atob("ZmxhZyBmcmFjdGlvbiAzOiBuZ18 ="))` which revealed `flag fraction 3: ng_`, the third fraction of the flag.
 
-![alt text](<Screenshot 2026-01-13 at 3.53.29 PM.png>)
+![alt text](<images/Screenshot 2026-01-13 at 3.53.29 PM.png>)
 
 At this point, I had half of the flag revealed: ###lving_###etypes.
 Making an educated guess based on what we encoutered in this challenge, I submitted the flag `evolving_filetypes` which was correct.
